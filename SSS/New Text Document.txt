@@ -1,0 +1,12 @@
+STL
+http://www.cs.northwestern.edu/~riesbeck/programming/c++/stl-summary.html
+- object pool pattern
+https://gist.github.com/pazdera/1124832 
+DLCP
+http://www.ibm.com/developerworks/library/j-dcl/
+C
+http://www.c4learn.com/
+
+
+crontab  mainto
+https://www.marksanborn.net/linux/learning-cron-by-example/
