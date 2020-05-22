@@ -1,0 +1,60 @@
+199500</ID><ID>199501</ID><ID>199502</ID><ID>199503</ID><ID>199504</ID><ID>199505
+
+[OR]
+Method-2:
+Use following dummycalls to reproduce MAchine STOP behaviour.
+
+Method 1:
+[Common Pre-Condition]
+set below 08 code values as mentioned below.
+
+[‎2/‎21/‎2019 8:09 PM] Viresh M Shirol: 
+interrupt copy behavior check
+----interrupt for Arvind
+[‎2/‎21/‎2019 8:10 PM] Viresh M Shirol: 
+Proof copy --- i think it's ok...confirm with Arvind once
+[‎2/‎21/‎2019 8:11 PM] Viresh M Shirol: 
+buildJob ---separate the th3 generation timings ---split bw scanning part and printing part...we may have some bugs there in our code
+
+[‎2/‎21/‎2019 8:18 PM] Viresh M Shirol: 
+1432--this is print & box flow
+add the flow for eFiling print from TA/Panel
+[‎2/‎21/‎2019 8:22 PM] Viresh M Shirol: 
+1434 ---1job with 10 pages?
+[‎2/‎21/‎2019 8:24 PM] Viresh M Shirol: 
+for each running job test. The initial condition is NO Th3 or all the threshold errors are cleared
+[‎2/‎21/‎2019 8:27 PM] Viresh M Shirol: 
+TestPrint/TestCopy ---check if guidance msg displayed or not---Ping Mani
+04-testcopy?? or 05-testcopy?? confirm once  OK
+
+
+[‎2/‎21/‎2019 8:33 PM] Viresh M Shirol: 
+1456---non critical?
+all are copy pasted procedures
+[‎2/‎21/‎2019 8:34 PM] Viresh M Shirol: 
+only 15 test case should be sufficient for this category...to cover each unit +5 extra etc
+[‎2/‎21/‎2019 8:44 PM] Viresh M Shirol: 
+PMSupport mode test cases : You dont go to 08 mode. Fix the statement to represent PMSupport mode
+
+
+22-02-2019 Current conclusions		
+	1>All the operations and jobs till the shutdown operations were correctly executed.	
+	2>The reason for 0x4F10 logged in joblog is for the shared print released during shutdown operation	
+	3>If the issue observed is between 16:10 to 16:19, we do not have panel/ui logs to check if UI misbehaved.	
+	4>If we could get more info from the customer regarding the following, it would be helpful	
+		a>What is the actual behavior observed? That UI responded but printing did not happen?
+		b>Is the NG behavior reported similar for all the machine that the user tried on?
+		c>We think the other machines logs for 6th Feb may not be available. So is it possible for the customer to reproduce the scenario using the document/s that were used?
+		
+		
+		
+37> TC371: “Switch to Line mode” is a very vague statement. Please fix the procedure so that what needs to be done is clear. For ex. Print ,reboot with hard power key, set line mode 08 code, reboot in normal mode, generate Th3   or so.
+
+30>TC319,320: Intention is clear but the procedure is not complete.(Makes it open for interpretation)---Job build execution is not clearly mentioned only setting is mentioned .Please check if update is necessary.
+
+42>TC385: HDD backup tool? I am not sure if there is such a tool .My assumption was that backup/restore is done via UF icon.  Please confirm and modify the procedure if required.  (I do not know the exact procedure for backup/restore. If it’s possible from USB or TA, I think your procedure is ok but that too should be explicitly specified)
+
+44>TC415: Please clarify what is being tested here. The procedure,title do not seem to show what is being done.  If it’s log export, shouldn’t some policy be registered on server before MFP sends the info to server? Etc
+		BTW, I read the procedure again and understood it. But please see if you can clarify it in more detail because next 2-3 test cases depend on this TC.
+
+205-207>in the MessageLog
